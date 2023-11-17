@@ -1,7 +1,5 @@
 import Expence from "./component/Expence";
 
-import './component/Expence';
-
 function App(){
   return (
     <div>

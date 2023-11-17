@@ -1,11 +1,11 @@
-import 'Expence.css';
+import './Expence.css';
 function Expence(){
     return (
-        <div>
+        <div className='expence-item'>
             <div>March 12th 2021</div>
-            <div>
+            <div className='expence-item__description'>
                 <h2>Car Insurance</h2>
-                <div>$200</div>
+                <div className='expence-item__price'>$200</div>
             </div>
         </div>
     );
