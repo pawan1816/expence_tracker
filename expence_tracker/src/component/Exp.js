@@ -4,12 +4,7 @@ import Expence from "./Expence"
 function Exp(props){
     return (
             <div>
-                {props.item.filter( a=>{
-                    if(a.date.getFullYear() < 2023){
-                        return a
-                    }
-                }
-                ).map((a)=>(
+                { props.item.map((a)=>(
                 //<p>hi</p>
                    <Expence date={a.date} title={a.title} amount={a.amount}/>
                 ))}
