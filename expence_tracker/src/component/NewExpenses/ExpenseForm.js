@@ -8,24 +8,43 @@ const ExpenseForm = ()=>{
      const [enteredDate,setEnteredDate]=useState("");
 
      const titleChangeHandler =(event)=>{
-          console.log(event.target.value);
+          setEnteredTitle(event.target.value);
      };
-     const amountChangeHandler =(event)=>{};
-     const dateChangeHandler =(event)=>{};
+     const amountChangeHandler =(event)=>{
+          setEnteredAmount(event.target.value);
+     };
+     const dateChangeHandler =(event)=>{
+          setEnteredDate(event.target.value);
+     };
+
+     const sumitHandler =(event)=>{
+          event.preventDefault();
+          const expenseDate={
+               title:enteredTitle,
+               amount:enteredAmount,
+               date:new Date(enteredDate)
+               
+          }
+          
+          console.log(expenseDate);
+          setEnteredAmount('');
+          setEnteredTitle('');
+          setEnteredDate('');
+     };
      return(
-        <form>
+        <form onSubmit={sumitHandler}>
             <div className="new-expense_controls">
                 <div className="new-expense_control">
                      <level>Title</level>
-                     <input type="text" onChange={titleChangeHandler}/>
+                     <input type="text" value={enteredTitle} onChange={titleChangeHandler}/>
                 </div>
                 <div className="new-expense_control">
                      <level>Amounts</level>
-                     <input type="number" min="0.01" step="0.01" onChange={amountChangeHandler}/>
+                     <input type="number" min="0.01" step="0.01" value={enteredAmount} onChange={amountChangeHandler}/>
                 </div>
                 <div className="new-expense_control">
                      <level>Date</level>
-                     <input type="date" onChange={dateChangeHandler}/>
+                     <input type="date" value={enteredDate} onChange={dateChangeHandler}/>
                 </div>
             </div>
             <div className="new-expense_actions">
