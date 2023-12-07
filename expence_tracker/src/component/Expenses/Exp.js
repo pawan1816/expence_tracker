@@ -1,11 +1,12 @@
-import './Expences.css';
+import React from 'react';
+import './Exp.css';
 
-import Expence from "./Expence"
+import Expence from "./Expence";
+import Card from "../UI/Card";
 function Exp(props){
     return (
-            <div>
+            <Card className="expenses">
                 { props.item.map((a)=>(
-                //<p>hi</p>
                    <Expence date={a.date} title={a.title} amount={a.amount}/>
                 ))}
             {/* <Expence
@@ -17,14 +18,15 @@ function Exp(props){
                title={ props.item[1].title } 
                amount={ props.item[1].amount }/>
             <Expence 
-               date={ props.itemprops.item[2].date } 
+            date={ props.itemprops.item[2].date } 
                title={ props.item[2].title } 
-               amount={ props.item[2].amount }/>
+               amount={ props.item[2].amount }>
             <Expence 
-              date={ props.item[3].date } 
+             date={ props.item[3].date } 
               title={ props.item[3].title } 
-              amount={ props.item[3].amount }/> */}
-        </div>
+              amount={ props.item[3].amount }/>
+            </Expence> */}
+        </Card>
     );
 }
 export default Exp;

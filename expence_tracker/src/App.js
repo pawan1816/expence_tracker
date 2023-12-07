@@ -1,11 +1,12 @@
-import Exp from "./component/Exp";
+import React from 'react';
+import Exp from "./component/Expenses/Exp";
 
 function App(){
-  const expenses =[
+  let expenses =[
     {
       id:'e1',
       title: 'scool fee',
-      amount:250,
+      amount: 250,
       date: new Date(2021, 5, 12)
     },
     {
